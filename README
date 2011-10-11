@@ -1,0 +1,15 @@
+Using this grading script:
+
+1) Dump the list of your students into students.txt
+    (Case ID, one per line)
+
+2) Download the entire gradebook's files for one assignment
+    into a folder like HW3/
+
+    (so that the file HW3/gradebook_fall_2011_HW 3.zip exists)
+
+3) cd HW3; unzip gradebook_*
+
+4) sh prepare.sh HW3 students.txt
+
+5) Enjoy! You can easily access everything in MATLAB now!
