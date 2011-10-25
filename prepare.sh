@@ -17,8 +17,10 @@ for CASEID in `find $1 -type f | grep -v gradebook | cut -d "_" -f 2 | uniq`; do
 	for J in `find $1 -type f -name \*$CASEID\*`; do
 		BASENAME=`basename $J`
 		ACTUAL_FILENAME=`echo $BASENAME | cut -d "_" -f 5-`
-		echo "%"$BASENAME > $1/$CASEID/$ACTUAL_FILENAME 
-		cat $J >> $1/$CASEID/$ACTUAL_FILENAME
+        if [ -n $ACTUAL_FILENAME ]; then
+            echo "%"$BASENAME > $1/$CASEID/$ACTUAL_FILENAME 
+            cat $J >> $1/$CASEID/$ACTUAL_FILENAME
+        fi
 		rm $J
 	done
 done
