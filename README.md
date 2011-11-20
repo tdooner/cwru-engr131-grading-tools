@@ -9,7 +9,8 @@ Using these tools makes grading MATLAB downloaded from Blackboard minimally pain
 1. Create a list `students.txt` with your students' CaseIDs, one per line.
 2. On Blackboard, go to Grade Center and find the desired assignment to grade.
 3. On the _Assignment File Download_ screen, download a .zip with all students in it (Show All > Select All)
-4. Download the file (gradebook[assignment\_name].zip) into a new directory alongside `prepare.sh`. For instance, here is my folder heirarchy, each folder containing the gradebook zip file for that assignment:
+4. Move the downloaded file (gradebook[assignment\_name].zip) into a new directory alongside `prepare.sh`. For instance, here is my folder heirarchy, each folder containing the gradebook zip file for that assignment:
+
     Shiny:TA tom$ ls
     HW1
     HW2
@@ -31,7 +32,8 @@ Using these tools makes grading MATLAB downloaded from Blackboard minimally pain
     cheat.py
     prepare.sh
     students.txt
-5. Run `./prepare.sh [AssignmentFolder] [/path/to/students.txt]` (e.g. `./prepare.sh HW8 students.txt`)
+
+5. Run `./prepare.sh [AssignmentFolder] [/path/to/students.txt]` (e.g. `./prepare.sh HW8 students.txt`). If you don't want to limit the files to those in students.txt, pass in `/dev/null` for students.txt.
 6. All files for each person have been extracted and grouped. In MATLAB you can step through the directories with ease and look at all the files.
 
 Cheating Detection
