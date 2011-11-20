@@ -9,7 +9,9 @@ fi
 unzip $1/gradebook*.zip -d $1
 
 # Then remove all files which aren't in students.txt
-find $1 -type f | grep -v -F -f $2 | grep -v gradebook | xargs rm
+if [[ -f $2 ]]; then
+    find $1 -type f | grep -v -F -f $2 | grep -v gradebook | xargs rm
+fi
 
 # Now move all students' files into their own folder.
 for CASEID in `find $1 -type f | grep -v gradebook | cut -d "_" -f 2 | uniq`; do
@@ -17,7 +19,7 @@ for CASEID in `find $1 -type f | grep -v gradebook | cut -d "_" -f 2 | uniq`; do
 	for J in `find $1 -type f -name \*$CASEID\*`; do
 		BASENAME=`basename $J`
 		ACTUAL_FILENAME=`echo $BASENAME | cut -d "_" -f 5-`
-        if [ -n $ACTUAL_FILENAME ]; then
+        if [[ -n $ACTUAL_FILENAME ]]; then
             echo "%"$BASENAME > $1/$CASEID/$ACTUAL_FILENAME 
             cat $J >> $1/$CASEID/$ACTUAL_FILENAME
         fi
