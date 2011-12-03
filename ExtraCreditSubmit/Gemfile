@@ -1,0 +1,8 @@
+source :rubygems
+
+gem "delayed_job"
+gem "sinatra"
+gem "activerecord"
+gem "haml"
+gem "rubycas-client"
+gem "json"

@@ -1,0 +1,44 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activemodel (3.1.3)
+      activesupport (= 3.1.3)
+      builder (~> 3.0.0)
+      i18n (~> 0.6)
+    activerecord (3.1.3)
+      activemodel (= 3.1.3)
+      activesupport (= 3.1.3)
+      arel (~> 2.2.1)
+      tzinfo (~> 0.3.29)
+    activesupport (3.1.3)
+      multi_json (~> 1.0)
+    arel (2.2.1)
+    builder (3.0.0)
+    daemons (1.1.4)
+    delayed_job (2.1.4)
+      activesupport (~> 3.0)
+      daemons
+    haml (3.1.4)
+    i18n (0.6.0)
+    multi_json (1.0.4)
+    rack (1.3.5)
+    rack-protection (1.1.4)
+      rack
+    rubycas-client (2.3.7)
+      activesupport
+    sinatra (1.3.1)
+      rack (~> 1.3, >= 1.3.4)
+      rack-protection (~> 1.1, >= 1.1.2)
+      tilt (~> 1.3, >= 1.3.3)
+    tilt (1.3.3)
+    tzinfo (0.3.31)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activerecord
+  delayed_job
+  haml
+  rubycas-client
+  sinatra
