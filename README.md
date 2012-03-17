@@ -33,8 +33,9 @@ Using these tools makes grading MATLAB downloaded from Blackboard minimally pain
     prepare.sh
     students.txt
 
-5. Run `./prepare.sh [AssignmentFolder] [/path/to/students.txt]` (e.g. `./prepare.sh HW8 students.txt`). If you don't want to limit the files to those in students.txt, pass in `/dev/null` for students.txt.
-6. All files for each person have been extracted and grouped. In MATLAB you can step through the directories with ease and look at all the files.
+5. (Optionally) Create a folder `everyone` alongside the gradebook*.zip file. All files in `everyone` will be symlinked in every student's folder. Use this for files that are included with the assignment.
+6. Run `./prepare.sh [AssignmentFolder] [/path/to/students.txt]` (e.g. `./prepare.sh HW8 students.txt`). If you don't want to limit the files to those in students.txt, pass in `/dev/null` for students.txt.
+7. All files for each person have been extracted and grouped. In MATLAB you can step through the directories with ease and look at all the files.
 
 Cheating Detection
 -------------------------
