@@ -35,10 +35,18 @@ sections.each do |section|
   puts "Section: #{section}"
   a.submissions(section: section, with: ['submission_comments']).sample(5).each do |s|
     puts "User ID: #{s.user_id}"
+    puts "Grade: #{s.score}"
     s.attachments.each do |a|
       puts "| - Downloading... #{a.filename}"
-      `wget #{a.url} -O outfile`
+      `wget "#{a.url}" -O outfile --quiet`
+      `unzip -q outfile -d out`
+      puts "| - Extracted file... #{a.filename}"
+      puts "| - Comments:\n------------------"
+      s.submission_comments.each do |c|
+        puts "#{c.comment}\n-----"
+      end
       gets
+      `rm -rf out/*`
     end
     puts "------------------------------------------------"
   end
