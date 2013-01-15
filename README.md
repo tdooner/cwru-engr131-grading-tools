@@ -11,22 +11,22 @@ Using these tools makes grading MATLAB downloaded from Blackboard minimally pain
 3. On the _Assignment File Download_ screen, download a .zip with all students in it (Show All > Select All)
 4. Move the downloaded file (gradebook[assignment\_name].zip) into a new directory alongside `prepare.sh`. For instance, here is my folder heirarchy, each folder containing the gradebook zip file for that assignment:
 
-```10073 Case 2011-2012/TA  » tree
-.
-├── HW1
-│   ├── gradebook_ENGR_131_HW\ 1.zip
-├── HW2
-│   ├── gradebook_ENGR_131_HW\ 2.zip
-│   ├── everyone
-│   │   ├── audio.wav
-│   │   ├── digital.wav
-│   │   ├── is.wav
-│   │   ├── madhava.m
-│   │   └── monteCarlo.m
-├── cheat.py
-├── cheat.sh
-├── prepare.sh
-└── students.txt```
+        10073 Case 2011-2012/TA  » tree
+        .
+        ├── HW1
+        │   ├── gradebook_ENGR_131_HW\ 1.zip
+        ├── HW2
+        │   ├── gradebook_ENGR_131_HW\ 2.zip
+        │   ├── everyone
+        │   │   ├── audio.wav
+        │   │   ├── digital.wav
+        │   │   ├── is.wav
+        │   │   ├── madhava.m
+        │   │   └── monteCarlo.m
+        ├── cheat.py
+        ├── cheat.sh
+        ├── prepare.sh
+        └── students.txt
 
 5. (Optionally) Create a folder `everyone` alongside the gradebook*.zip file. All files in `everyone` will be symlinked in every student's folder. Use this for files that are included with the assignment.
 6. Run `./prepare.sh [AssignmentFolder] [/path/to/students.txt]` (e.g. `./prepare.sh HW8 students.txt`). If you don't want to limit the files to those in students.txt, pass in `/dev/null` for students.txt.
