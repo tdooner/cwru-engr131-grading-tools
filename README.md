@@ -14,15 +14,15 @@ Using these tools makes grading MATLAB downloaded from Blackboard minimally pain
         10073 Case 2011-2012/TA  » tree
         .
         ├── HW1
-        │   ├── gradebook_ENGR_131_HW\ 1.zip
+        │   └── gradebook_ENGR_131_HW\ 1.zip
         ├── HW2
         │   ├── gradebook_ENGR_131_HW\ 2.zip
-        │   ├── everyone
-        │   │   ├── audio.wav
-        │   │   ├── digital.wav
-        │   │   ├── is.wav
-        │   │   ├── madhava.m
-        │   │   └── monteCarlo.m
+        │   └── everyone
+        │       ├── audio.wav
+        │       ├── digital.wav
+        │       ├── is.wav
+        │       ├── madhava.m
+        │       └── monteCarlo.m
         ├── cheat.py
         ├── cheat.sh
         ├── prepare.sh
