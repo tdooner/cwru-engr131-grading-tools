@@ -4,13 +4,23 @@ move_to_caseid() {
     #$1 is HW10
     #$2 is ted27
     mkdir $1/$2/
-    for J in `find $1 -type f -name \*$2\*`; do
+
+    for J in `find $1 -type f -name \*_$2_attempt_\*`; do
         # NOTE: Since the files for multiple attempts are lexicographically
         # ordered, newer attempts will override older attempts.
         BASENAME=`basename $J`
         ACTUAL_FILENAME=`echo $BASENAME | cut -d "_" -f 5-`
+
         if [[ -n $ACTUAL_FILENAME ]]; then
-            mv $J $1/$2/$ACTUAL_FILENAME
+            FILETYPE=`file --mime-type -b $J`
+
+            if [[ $FILETYPE = 'application/zip' ]]; then
+                unzip -q -o -d $1/$2/ $J
+                rm $J
+            else
+                NEW_FILENAME=$1/$2/$ACTUAL_FILENAME
+                mv $J $NEW_FILENAME
+            fi
         else
             rm $J
         fi
